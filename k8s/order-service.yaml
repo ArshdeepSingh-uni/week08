@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-service-w08e1 # Deployment name matches
+  name: order-service-w08e1
   labels:
     app: order-service
 spec:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: order-service-container
-        image: durgeshsamariya.azurecr.io/order_service:latest
+        image: arshregistry.azurecr.io/order_service:latest # ✅ updated to your ACR
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
