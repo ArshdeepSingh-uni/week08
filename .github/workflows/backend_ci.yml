@@ -103,14 +103,14 @@ jobs:
 
       - name: Build and Push Product Service Image
         run: |
-          docker build -t ${{ env.ACR_LOGIN_SERVER }}/product_service:${{ env.IMAGE_TAG }} $GITHUB_WORKSPACE/backend/product_service
+          docker build -t ${{ env.ACR_LOGIN_SERVER }}/product_service:${{ env.IMAGE_TAG }} ./backend/product_service
           docker push ${{ env.ACR_LOGIN_SERVER }}/product_service:${{ env.IMAGE_TAG }}
           docker tag ${{ env.ACR_LOGIN_SERVER }}/product_service:${{ env.IMAGE_TAG }} ${{ env.ACR_LOGIN_SERVER }}/product_service:latest
           docker push ${{ env.ACR_LOGIN_SERVER }}/product_service:latest
 
       - name: Build and Push Order Service Image
         run: |
-          docker build -t ${{ env.ACR_LOGIN_SERVER }}/order_service:${{ env.IMAGE_TAG }} $GITHUB_WORKSPACE/backend/order_service
+          docker build -t ${{ env.ACR_LOGIN_SERVER }}/order_service:${{ env.IMAGE_TAG }} ./backend/order_service
           docker push ${{ env.ACR_LOGIN_SERVER }}/order_service:${{ env.IMAGE_TAG }}
           docker tag ${{ env.ACR_LOGIN_SERVER }}/order_service:${{ env.IMAGE_TAG }} ${{ env.ACR_LOGIN_SERVER }}/order_service:latest
           docker push ${{ env.ACR_LOGIN_SERVER }}/order_service:latest
